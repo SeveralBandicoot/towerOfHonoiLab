@@ -1,20 +1,16 @@
-/* Towers of Hanoi 2
+/* Towers of Hanoi - using Stacks
 
 @AJ Enrique Arguello (10/1/24)
 
-* Objective: With 4 "blocks" (characters - A, B, C & D) and 3 character vectors T1, T2 & T3
-
-Create 3 character vectors T1, T2 and T3 . Fill T1 with the characters A, B & C (leaving the
-other 2 empty). 
-
-Display the Board
+* Objective: Students will simulate the Tower of Hanoi Puzzle
+With 4 Blocks (characters - A, B, C & D) and 3 character Stacks T1, T2 & T3
+Create 3 character stacks T1, T2 and T3. Fill T1 with the characters A, B, C & D (leaving the
+other 2 Towers T2 & T3 empty). Display the Board
 T1 A B C D
 T2
 T3
-
 Prompt the user to enter a source T and a destination T.
-
-Move the last character from source vector to dest vector
+Move the last character from source to destination – Students MUST use Stacks
 
 Ex) if the user entered 1 and then 2 the display should show
 T1 A B C
@@ -25,11 +21,10 @@ Ex) entering 1-3 would then move the B character to the T3
 T1 A B
 T2 D
 T3 C
-
 Continue prompting the user until the A B C D characters are moved to Tower 3 in order
-
 The only rule is that letters can NEVER be out of alphabetical order.
 A B is allowed but not B A, A C is allowed but not C A, B C but not C B,...
+
 
 */
 
@@ -134,7 +129,7 @@ void tower(int &start, int &end, stack<char> &T1, stack<char> &T2, stack<char> &
     if (source && destination && !source->empty()) {
         char topElement = source->top();
 
-        if (destination->empty() || topElement > destination->top()) { // checls of destination is empty or in the incorrect order  
+        if (destination->empty() || topElement > destination->top()) { // checks if destination is empty or in the incorrect order  
             source->pop(); // removes element from the source
             destination->push(topElement); // moves the top element to the destination stack
         } else { 
